@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>45c90abc-15ff-4523-8bd3-ff7fafea2944</UserSecretsId>
+    <DockerDefaultTargetOS>Linux</DockerDefaultTargetOS>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.21.0" />
+    <PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.4" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\IoTUserService.Application\IoTUserService.Application.csproj" />
+    <ProjectReference Include="..\IoTUserService.Domain\IoTUserService.Domain.csproj" />
+    <ProjectReference Include="..\IoTUserService.Infrastructure\IoTUserService.Infrastructure.csproj" />
+  </ItemGroup>
+
+</Project>
