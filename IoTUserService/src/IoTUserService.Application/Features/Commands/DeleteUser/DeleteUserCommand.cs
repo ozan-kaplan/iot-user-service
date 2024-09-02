@@ -9,6 +9,10 @@ namespace IoTUserService.Application.Features.Commands.DeleteUser
 {
     public class DeleteUserCommand : IRequest<bool>
     {
+        public DeleteUserCommand(Guid id)
+        {
+            Id = id;
+        }
         public Guid Id { get; set; }
     }
 }

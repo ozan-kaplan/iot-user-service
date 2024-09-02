@@ -1,4 +1,5 @@
 ﻿using IoTUserService.Application.Features.Commands.CreateUser;
+using IoTUserService.Application.Features.Commands.DeleteUser;
 using IoTUserService.Application.Features.Commands.UpdateUser;
 using IoTUserService.Application.Features.Queries.GetPagedUsers;
 using IoTUserService.Application.Features.Queries.GetUserById;
@@ -60,6 +61,13 @@ namespace IoTUserService.API.Controllers
             }
 
             return NoContent();
+        }
+
+        [HttpDelete("{id}")]
+        public async Task<IActionResult> DeleteUser(Guid id)
+        {
+            await _mediator.Send(new DeleteUserCommand(id));
+            return NoContent();  
         }
 
 
