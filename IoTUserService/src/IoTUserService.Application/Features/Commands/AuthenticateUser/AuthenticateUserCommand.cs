@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IoTUserService.Application.Features.Queries.AuthenticateUser
+namespace IoTUserService.Application.Features.Commands.AuthenticateUser
 {
     public class AuthenticateUserCommand : IRequest<AuthenticateResponseDto>
     {

@@ -57,6 +57,9 @@ namespace IoTUserService.Infrastructure.Repositories
             return new PagedResultModel<User>(items, totalRecords);
         }
 
-   
+        public async Task<User?> GetByEmailAsync(string email)
+        {
+            return await _context.Users.FirstOrDefaultAsync(u => u.Email == email && !u.IsDeleted);
+        }
     }
 }
