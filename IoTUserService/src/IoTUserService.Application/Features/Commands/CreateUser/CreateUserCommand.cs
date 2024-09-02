@@ -10,7 +10,7 @@ namespace IoTUserService.Application.Features.Commands.CreateUser
       
     public class CreateUserCommand : IRequest<Guid>
     {
-        
+        public Guid CustomerId { get; set; }
         public required string Email { get; set; }
         public string? FirstName { get; set; }
         public string? LastName { get; set; }

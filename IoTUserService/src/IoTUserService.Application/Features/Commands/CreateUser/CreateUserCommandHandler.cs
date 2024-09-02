@@ -22,6 +22,7 @@ namespace IoTUserService.Application.Features.Commands.CreateUser
             var user = new User
             {
                 Id = Guid.NewGuid(),
+                CustomerId = request.CustomerId,
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 GSMNumber = request.GSMNumber,
