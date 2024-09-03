@@ -24,20 +24,25 @@ namespace IoTUserService.Application.Features.UserCQ.Commands.CreateUser
             if (existingUser != null)
                 throw new Exception("User with this email already exists.");
 
+            if (request.Authority == UserAuthority.SystemAdmin)
+                throw new Exception("System Admin cannot be created by this method.");
+
             var hashedPassword = _passwordHasher.HashPassword(request.Password);
 
             var user = new User
             {
                 Id = Guid.NewGuid(),
+                Status = UserStatus.Active,
+                CreatedAt = DateTime.UtcNow,
+                UpdatedAt = DateTime.UtcNow,
+                Authority = request.Authority,
                 CustomerId = request.CustomerId,
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 GSMNumber = request.GSMNumber,
                 Email = request.Email,
                 PasswordHash = hashedPassword,
-                Status = UserStatus.Active,
-                CreatedAt = DateTime.UtcNow,
-                UpdatedAt = DateTime.UtcNow
+
             };
 
             await _unitOfWork.Users.AddAsync(user);

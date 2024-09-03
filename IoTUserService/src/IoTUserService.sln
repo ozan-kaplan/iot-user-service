@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.11.35222.181
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTUserService.Domain", "IoTUserService.Domain\IoTUserService.Domain.csproj", "{B1E8A9F6-9F56-417A-9554-594FCCB12C05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTUserService.Domain", "IoTUserService.Domain\IoTUserService.Domain.csproj", "{B1E8A9F6-9F56-417A-9554-594FCCB12C05}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTUserService.Infrastructure", "IoTUserService.Infrastructure\IoTUserService.Infrastructure.csproj", "{2FB6FC04-8E05-466F-BE59-E67B5D00D731}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTUserService.Infrastructure", "IoTUserService.Infrastructure\IoTUserService.Infrastructure.csproj", "{2FB6FC04-8E05-466F-BE59-E67B5D00D731}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTUserService.Application", "IoTUserService.Application\IoTUserService.Application.csproj", "{0AB65CB7-118A-49ED-B9E6-0923B9CD0BFE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTUserService.Application", "IoTUserService.Application\IoTUserService.Application.csproj", "{0AB65CB7-118A-49ED-B9E6-0923B9CD0BFE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTUserService.API", "IoTUserService.API\IoTUserService.API.csproj", "{98479047-83AA-43B0-9B49-4D8587E225F2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IoTUserService.API", "IoTUserService.API\IoTUserService.API.csproj", "{98479047-83AA-43B0-9B49-4D8587E225F2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IoTUserService.Shared", "IoTUserService.Shared\IoTUserService.Shared.csproj", "{D71586FB-2F38-4633-998C-CD3C1E8B95E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{98479047-83AA-43B0-9B49-4D8587E225F2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{98479047-83AA-43B0-9B49-4D8587E225F2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{98479047-83AA-43B0-9B49-4D8587E225F2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D71586FB-2F38-4633-998C-CD3C1E8B95E5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D71586FB-2F38-4633-998C-CD3C1E8B95E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D71586FB-2F38-4633-998C-CD3C1E8B95E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D71586FB-2F38-4633-998C-CD3C1E8B95E5}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

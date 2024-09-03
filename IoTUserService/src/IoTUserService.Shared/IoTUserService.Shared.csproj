@@ -6,8 +6,4 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\IoTUserService.Shared\IoTUserService.Shared.csproj" />
-  </ItemGroup>
-
 </Project>
