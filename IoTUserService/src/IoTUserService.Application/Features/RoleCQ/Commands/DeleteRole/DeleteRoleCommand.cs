@@ -13,6 +13,7 @@ namespace IoTUserService.Application.Features.RoleCQ.Commands.DeleteRole
         {
             Id = id;
         }
+
         public Guid Id { get; set; }
     }
 }

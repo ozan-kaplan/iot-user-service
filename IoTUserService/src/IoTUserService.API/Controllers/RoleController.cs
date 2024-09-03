@@ -1,4 +1,5 @@
-﻿using IoTUserService.Application.Features.RoleCQ.Commands.CreateRole;
+﻿using IoTUserService.Application.Features.RoleCQ.Commands.AssignPermission;
+using IoTUserService.Application.Features.RoleCQ.Commands.CreateRole;
 using IoTUserService.Application.Features.RoleCQ.Commands.DeleteRole;
 using IoTUserService.Application.Features.RoleCQ.Commands.UpdateRole;
 using IoTUserService.Application.Features.RoleCQ.Queries.GetPagedRoles;
@@ -65,7 +66,17 @@ namespace IoTUserService.API.Controllers
         [HttpDelete("{id}")]
         public async Task<IActionResult> DeleteRole(Guid id)
         {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
             await _mediator.Send(new DeleteRoleCommand(id));
+            return NoContent();
+        }
+
+        [HttpPost("{roleId}/assign-permissions")]
+        public async Task<IActionResult> AssignPermissionsToRole(Guid roleId, [FromBody] AssignPermissionsToRoleCommand command)
+        {  
+            await _mediator.Send(command);
             return NoContent();
         }
     }

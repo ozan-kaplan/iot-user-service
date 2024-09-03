@@ -10,8 +10,8 @@ namespace IoTUserService.Application.Features.RoleCQ.Commands.AssignPermission
 {
     public class AssignPermissionsToRoleCommand: IRequest<bool>
     {
-        public Guid RoleId { get; set; }
-        public List<PermissionDto> Permissions { get; set; }
+        public required Guid RoleId { get; set; }
+        public required List<PermissionDto> Permissions { get; set; }
 
         public AssignPermissionsToRoleCommand(Guid roleId, List<PermissionDto> permissions)
         {
