@@ -5,7 +5,6 @@ using IoTUserService.Application.Features.UserCQ.Queries.GetPagedUsers;
 using IoTUserService.Application.Features.UserCQ.Queries.GetUserById;
 using IoTUserService.Application.Models;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace IoTUserService.API.Controllers
@@ -69,7 +68,5 @@ namespace IoTUserService.API.Controllers
             await _mediator.Send(new DeleteUserCommand(id));
             return NoContent();  
         }
-
-
     }
 }
