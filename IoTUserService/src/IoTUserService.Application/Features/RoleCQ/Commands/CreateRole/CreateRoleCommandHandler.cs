@@ -27,7 +27,6 @@ namespace IoTUserService.Application.Features.RoleCQ.Commands.CreateRole
             };
 
             await _unitOfWork.Roles.AddAsync(role);
-
             await _unitOfWork.SaveChangesAsync();
 
             return role.Id;
