@@ -23,7 +23,9 @@ namespace IoTUserService.Application.Features.RoleCQ.Commands.CreateRole
             {
                 CustomerId = request.CustomerId,
                 Name = request.Name,
-                Description = request.Description
+                Description = request.Description,
+                CreatedAt  = DateTime.Now,
+                UpdatedAt = DateTime.Now,
             };
 
             await _unitOfWork.Roles.AddAsync(role);
