@@ -1,13 +1,8 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace IoTUserService.Application.Features.Commands.CreateUser
+namespace IoTUserService.Application.Features.UserCQ.Commands.CreateUser
 {
-      
+
     public class CreateUserCommand : IRequest<Guid>
     {
         public Guid CustomerId { get; set; }

@@ -1,26 +1,22 @@
 ﻿using AutoMapper;
-using IoTUserService.Application.Interfaces.Repositories;
 using IoTUserService.Application.Models;
+using IoTUserService.Domain.Repositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace IoTUserService.Application.Features.Queries.GetPagedUsers
+namespace IoTUserService.Application.Features.UserCQ.Queries.GetPagedUsers
 {
     public class GetPagedUsersQueryHandler : IRequestHandler<GetPagedUsersQuery, PagedResultModel<UserDto>>
     {
 
         private readonly List<string> _validColumns = new List<string> { "Email" };
 
-        private readonly IUserRepository _deviceRepository;
+        private readonly IUnitOfWork _unitOfWork;
+
         private readonly IMapper _mapper;
 
-        public GetPagedUsersQueryHandler(IUserRepository deviceRepository, IMapper mapper)
+        public GetPagedUsersQueryHandler(IUnitOfWork  unitOfWork, IMapper mapper)
         {
-            _deviceRepository = deviceRepository;
+            _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
 
@@ -38,11 +34,13 @@ namespace IoTUserService.Application.Features.Queries.GetPagedUsers
                 }
             }
 
-            return _mapper.Map<PagedResultModel<UserDto>>(await _deviceRepository.GetPagedAsync(
-                   request.QueryModel.PageNumber,
-                   request.QueryModel.PageSize,
-                   request.QueryModel.Sort,
-                   request.QueryModel.Filters));
+            var users = await _unitOfWork.Users.GetPagedAsync(request.QueryModel.PageNumber, request.QueryModel.PageSize, request.QueryModel.SortBy, request.QueryModel.SortAsc, request.QueryModel.Filters);
+            var totalCount = await _unitOfWork.Users.Count(request.QueryModel.Filters);
+
+
+            return new PagedResultModel<UserDto>(_mapper.Map<IEnumerable<UserDto>>(users), totalCount);
+
+             
         }
     }
 }

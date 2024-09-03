@@ -10,9 +10,9 @@ using System.Threading.Tasks;
 namespace IoTUserService.Infrastructure.Persistence.Context
 {
     
-    public class UserDbContext : DbContext
+    public class ApplicationDbContext : DbContext
     {
-        public UserDbContext(DbContextOptions<UserDbContext> options)
+        public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
         }

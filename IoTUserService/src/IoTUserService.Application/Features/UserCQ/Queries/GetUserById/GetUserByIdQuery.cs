@@ -1,12 +1,7 @@
 ﻿using IoTUserService.Application.Models;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace IoTUserService.Application.Features.Queries.GetUserById
+namespace IoTUserService.Application.Features.UserCQ.Queries.GetUserById
 {
     public class GetUserByIdQuery : IRequest<UserDto>
     {

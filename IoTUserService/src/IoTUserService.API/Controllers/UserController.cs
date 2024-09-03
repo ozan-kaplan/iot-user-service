@@ -1,8 +1,8 @@
-﻿using IoTUserService.Application.Features.Commands.CreateUser;
-using IoTUserService.Application.Features.Commands.DeleteUser;
-using IoTUserService.Application.Features.Commands.UpdateUser;
-using IoTUserService.Application.Features.Queries.GetPagedUsers;
-using IoTUserService.Application.Features.Queries.GetUserById;
+﻿using IoTUserService.Application.Features.UserCQ.Commands.CreateUser;
+using IoTUserService.Application.Features.UserCQ.Commands.DeleteUser;
+using IoTUserService.Application.Features.UserCQ.Commands.UpdateUser;
+using IoTUserService.Application.Features.UserCQ.Queries.GetPagedUsers;
+using IoTUserService.Application.Features.UserCQ.Queries.GetUserById;
 using IoTUserService.Application.Models;
 using MediatR;
 using Microsoft.AspNetCore.Http;

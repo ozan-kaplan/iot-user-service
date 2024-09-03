@@ -1,31 +1,26 @@
-﻿using IoTUserService.Application.Interfaces.Repositories;
-using IoTUserService.Application.Interfaces.Security;
+﻿using IoTUserService.Application.Interfaces.Security;
 using IoTUserService.Application.Models;
+using IoTUserService.Domain.Repositories;
 using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace IoTUserService.Application.Features.Commands.AuthenticateUser
+namespace IoTUserService.Application.Features.UserCQ.Commands.AuthenticateUser
 {
     public class AuthenticateUserCommandHandler : IRequestHandler<AuthenticateUserCommand, AuthenticateResponseDto>
     {
-        private readonly IUserRepository _userRepository;
+        private readonly IUnitOfWork _unitOfWork;
         private readonly IPasswordHasher _passwordHasher;
         private readonly IJwtTokenGenerator _jwtTokenGenerator;
 
-        public AuthenticateUserCommandHandler(IUserRepository userRepository, IPasswordHasher passwordHasher, IJwtTokenGenerator jwtTokenGenerator)
+        public AuthenticateUserCommandHandler(IUnitOfWork  unitOfWork, IPasswordHasher passwordHasher, IJwtTokenGenerator jwtTokenGenerator)
         {
-            _userRepository = userRepository;
+            _unitOfWork = unitOfWork;
             _passwordHasher = passwordHasher;
             _jwtTokenGenerator = jwtTokenGenerator;
         }
 
         public async Task<AuthenticateResponseDto> Handle(AuthenticateUserCommand request, CancellationToken cancellationToken)
         {
-            var user = await _userRepository.GetByEmailAsync(request.Email);
+            var user = await _unitOfWork.Users.GetByEmailAsync(request.Email);
             if (user == null)
             {
                 throw new UnauthorizedAccessException("Invalid credentials.");

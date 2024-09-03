@@ -1,11 +1,6 @@
 ﻿using MediatR;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace IoTUserService.Application.Features.Commands.UpdateUser
+namespace IoTUserService.Application.Features.UserCQ.Commands.UpdateUser
 {
     public class UpdateUserCommand : IRequest<bool>
     {

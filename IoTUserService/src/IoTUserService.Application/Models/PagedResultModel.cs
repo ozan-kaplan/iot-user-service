@@ -1,17 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace IoTUserService.Application.Models
+﻿namespace IoTUserService.Application.Models
 {
     public class PagedResultModel<T>
     {
-        public List<T> Items { get; set; }
+        public IEnumerable<T> Items { get; set; }
         public int TotalRecords { get; set; }
 
-        public PagedResultModel(List<T> items, int totalRecords)
+        public PagedResultModel(IEnumerable<T> items, int totalRecords)
         {
             Items = items;
             TotalRecords = totalRecords;
