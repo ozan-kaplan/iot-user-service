@@ -22,6 +22,7 @@ namespace IoTUserService.Application.Features.RoleCQ.Commands.UpdateRole
             if (entity == null)
                 throw new Exception("Role not found!");
 
+            entity.UpdatedAt = DateTime.Now;
             entity.Name = request.Name;
             entity.Description = request.Description;
 
