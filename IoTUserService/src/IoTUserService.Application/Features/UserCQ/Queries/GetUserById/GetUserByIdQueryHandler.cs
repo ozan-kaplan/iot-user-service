@@ -18,7 +18,11 @@ namespace IoTUserService.Application.Features.UserCQ.Queries.GetUserById
 
         public async Task<UserDto?> Handle(GetUserByIdQuery request, CancellationToken cancellationToken)
         {
-            return _mapper.Map<UserDto>(await _unitOfWork.Users.GetByIdAsync(request.Id));
+            var user = await _unitOfWork.Users.GetByIdAsync(request.Id);
+            if (user == null)
+                throw new Exception("User not found");
+
+            return _mapper.Map<UserDto>(user);
         }
     }
 }
