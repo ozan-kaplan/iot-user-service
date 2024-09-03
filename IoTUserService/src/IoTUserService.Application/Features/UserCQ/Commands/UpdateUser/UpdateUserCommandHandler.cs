@@ -18,6 +18,7 @@ namespace IoTUserService.Application.Features.UserCQ.Commands.UpdateUser
             if (device == null)
                 return false;
 
+            device.UpdatedAt = DateTime.Now;
             device.Email = request.Email;
             device.FirstName = request.FirstName;
             device.LastName = request.LastName;
