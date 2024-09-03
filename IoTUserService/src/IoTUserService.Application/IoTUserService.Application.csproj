@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\RoleCQ\Commands\DeleteRole\" />
     <Folder Include="Features\RoleCQ\Commands\AssignPermission\" />
     <Folder Include="Features\RoleCQ\Queries\GetPagedRoles\" />
     <Folder Include="Features\RoleCQ\Queries\GetRoleById\" />
