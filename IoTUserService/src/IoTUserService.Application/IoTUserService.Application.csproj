@@ -15,8 +15,4 @@
     <ProjectReference Include="..\IoTUserService.Domain\IoTUserService.Domain.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Features\RoleCQ\Commands\AssignPermission\" />
-  </ItemGroup>
-
 </Project>

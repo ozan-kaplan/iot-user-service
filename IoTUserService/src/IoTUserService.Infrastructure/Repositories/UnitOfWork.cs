@@ -11,12 +11,14 @@ namespace IoTUserService.Infrastructure.Repositories
         private IDbContextTransaction? _transaction;
         public IUserRepository Users { get; }
         public IRoleRepository Roles { get; }
+        public IPermissionRepository Permissions { get; }
 
-        public UnitOfWork(ApplicationDbContext context, IUserRepository users, IRoleRepository roles)
+        public UnitOfWork(ApplicationDbContext context, IUserRepository users, IRoleRepository roles, IPermissionRepository permissions)
         {
             _context = context;
             Users = users;
             Roles = roles;
+            Permissions = permissions;
         }
 
         public async Task BeginTransactionAsync()

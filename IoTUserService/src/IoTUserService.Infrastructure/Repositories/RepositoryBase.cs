@@ -68,5 +68,15 @@ namespace IoTUserService.Infrastructure.Repositories
 
             return query.CountAsync();
         }
+
+        public async Task BulkDeleteAsync(IEnumerable<T> entities)
+        {
+            await _context.Set<T>().BulkDeleteAsync(entities.ToList());
+        }
+
+        public async Task BulkInsertAsync(IEnumerable<T> entities)
+        {
+            await _context.Set<T>().BulkInsertAsync(entities);
+        }
     }
 }
