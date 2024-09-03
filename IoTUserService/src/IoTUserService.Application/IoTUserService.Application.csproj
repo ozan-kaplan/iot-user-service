@@ -16,7 +16,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Features\RoleCQ\Commands\CreateRole\" />
     <Folder Include="Features\RoleCQ\Commands\DeleteRole\" />
     <Folder Include="Features\RoleCQ\Commands\AssignPermission\" />
     <Folder Include="Features\RoleCQ\Commands\UpdateRole\" />

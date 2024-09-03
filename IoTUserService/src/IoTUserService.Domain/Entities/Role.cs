@@ -5,7 +5,7 @@
         public Guid CustomerId { get; set; }
         public required string Name { get; set; }
         public string? Description { get; set; }
-        public ICollection<Permission> Permissions { get; set; } = new List<Permission>();
+        public ICollection<Permission>? Permissions { get; set; } 
 
     }
 }

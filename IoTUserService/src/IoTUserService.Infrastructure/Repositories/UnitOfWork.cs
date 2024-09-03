@@ -7,13 +7,16 @@ namespace IoTUserService.Infrastructure.Repositories
     public class UnitOfWork : IUnitOfWork
     {
         private readonly ApplicationDbContext _context;
+
         private IDbContextTransaction? _transaction;
         public IUserRepository Users { get; }
+        public IRoleRepository Roles { get; }
 
-        public UnitOfWork(ApplicationDbContext context, IUserRepository users)
+        public UnitOfWork(ApplicationDbContext context, IUserRepository users, IRoleRepository roles)
         {
             _context = context;
             Users = users;
+            Roles = roles;
         }
 
         public async Task BeginTransactionAsync()
